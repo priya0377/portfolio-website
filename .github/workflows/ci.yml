@@ -1,0 +1,21 @@
+
+name: Portfolio Website CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check HTML file
+        run: test -f index.html
+
+      - name: Display success message
+        run: echo "Portfolio website CI completed successfully"
